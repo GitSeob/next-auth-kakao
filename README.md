@@ -1,6 +1,4 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
 개발 환경 프로젝트 시작하기:
 
 먼저 `.env` 혹은 `.env.local` 파일을 생성하여 `AUTH_KAKAO_ID`와 `AUTH_KAKAO_SECRET` 해당하는 값을 작성해주세요.
