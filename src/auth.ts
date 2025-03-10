@@ -1,5 +1,16 @@
-import NextAuth from 'next-auth'
+import NextAuth, { DefaultSession } from 'next-auth'
 import Kakao from '@auth/core/providers/kakao'
+
+declare module 'next-auth' {
+	/**
+	 * Returned by `auth`, `useSession`, `getSession` and received as a prop on the `SessionProvider` React Context
+	 */
+	interface Session {
+		user: {
+			image: string
+		} & DefaultSession['user']
+	}
+}
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
 	providers: [Kakao({ clientId: process.env.KAKAO_CLIENT_ID, clientSecret: process.env.KAKAO_CLIENT_SECRET })],
